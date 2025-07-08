@@ -1,0 +1,103 @@
+:root {
+  --primary-100: #FFFDF5;
+  --primary-200: #FFFBE5;
+  --primary-300: #E8E3DA;
+  --primary-400: #6E6B67;
+
+  --accent-100: #E0EFDE;
+  --accent-200: #569573;
+  --accent-300: #406C55;
+
+  --neutral-100: #F8F9FA;
+  --neutral-200: #DEE2E6;
+  --neutral-300: #ADB5BD;
+  --neutral-400: #6C757D;
+  --neutral-500: #343A40;
+  --neutral-600: #212529;
+
+  --white: #FFFFFF;
+  --info: #4A72FF;
+  --success: #2CC585;
+  --warning: #FFB054;
+  --danger: #D65F5F; 
+
+  --font-newsreader: "Newsreader", serif;
+
+  --line-height-s: 1.2;
+  --line-height: 1.5;
+
+  --letter-spacing-s: 0.05em;
+  --letter-spacing:0.1em
+
+  --font-black: 990;
+  --font-bold: 700;
+  --font-semiblod: 600;
+
+  --border-radius-s: 4px;
+  --border-radius-m: 12px;
+  --border-radius-l: 20px;
+
+}
+
+*,*::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Noto Serif TC", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: var(--line-height);
+}
+
+h1, .h1 {
+  font-size: 2.5rem;
+  line-height: var(--line-height-s);
+  letter-spacing: var(--letter-spacing);
+  font-weight: var(--font-black);
+}
+h2, .h2 {
+  font-size: 2rem;
+  line-height: var(--line-height-s);
+  letter-spacing: var(--letter-spacing);
+  font-weight: var(--font-black);
+}
+h3, .h3 {
+  font-size: 1.75rem;
+  line-height: var(--line-height-s);
+  letter-spacing: var(--letter-spacing);
+  font-weight: var(--font-black);
+}
+h4, .h4 {
+  font-size: 1.5rem;
+  line-height: var(--line-height-s);
+  letter-spacing: var(--letter-spacing);
+  font-weight: var(--font-bold);
+}
+h5, .h5 {
+  font-size: 1.25rem;
+  line-height: var(--line-height-s);
+  letter-spacing: var(--letter-spacing);
+  font-weight: var(--font-bold);
+}
+h6, .h6 {
+  line-height: var(--line-height-s);
+  letter-spacing: var(--letter-spacing);
+  font-weight: var(--font-black);
+}
+.fs-1 {
+  letter-spacing: var(--letter-spacing-s);
+  font-weight: var(--font-semiblod);
+}
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  vertical-align: center;
+}
+
+a {
+  text-decoration: none;
+  transition: all .3s ease;
+}

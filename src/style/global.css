@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Serif+TC:wght@200..900&display=swap');
+
+@import "./reset.css";
+@import "./base.css";
+
+:root {
+  --primary-100: #FFFDF5;
+  --primary-200: #FFFDF5;
+  --primary-300: #FFFDF5;
+  --primary-100: #FFFDF5;
+}
+
+@media (max-width: 991.98px) {
+
+}
+
+@media (max-width: 767.98px) {
+
+}
