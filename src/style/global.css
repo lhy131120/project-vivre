@@ -1,26 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Serif+TC:wght@200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Serif+TC:wght@200..900&display=swap");
 
 @import "./reset.css";
 @import "./base.css";
 
+/* hero */
+
+.hero {
+  aspect-ratio: 1296 / 454;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mobile-version-image {
+  display: none;
+}
+
+/* Blog */
+.blog p {
+  font-weight: var(--font-semiblod);
+  color: var(--neutral-500);
+  margin-bottom: 2.5rem;
+  letter-spacing: var(--letter-spacing-s);
+}
 
 @media (max-width: 991.98px) {
+  .hero {
+    aspect-ratio: 375 / 240;
+  }
 
-  .header{
-    padding: 8px 4px 8px 12px;
+  .mobile-version-image {
+    display: block;
   }
-  .header .logo {
-    width: 68px;
-  }
-  .header .collapse {
+
+  .desktop-version-image {
     display: none;
   }
-
-  .header .close-btn {
-    display: block;
+  .blog p {
+    margin-bottom: 1.5rem;
   }
 }
 
 @media (max-width: 767.98px) {
-
 }

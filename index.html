@@ -8,7 +8,9 @@
   </head>
   <body>
     <header class="header container">
-      <a class="logo" href="./index.html"><img src="./src/images/logo.svg" alt="Vivre"></a>
+      <a class="logo" href="./index.html"
+        ><img src="./src/images/logo.svg" alt="Vivre"
+      /></a>
       <button type="button" class="close-btn"><span>Close Menu</span></button>
       <div class="collapse">
         <form class="search-form">
@@ -17,20 +19,33 @@
         </form>
         <nav>
           <ul class="nav">
-            <li class="nav-item"><a class="nav-link" href="javascript:;">所有文章</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:;">訂閱方案</a></li>
-            <li class="nav-item"><a class="nav-link" href="javascript:;">關於我們</a></li>
-            <li class="nav-item"><button type="button" class="btn                        ">登入 / 註冊</button></li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">所有文章</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">訂閱方案</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">關於我們</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn">登入 / 註冊</button>
+            </li>
           </ul>
         </nav>
       </div>
     </header>
     <main class="">
-      <section class="hero">
-        <img src="./src/images/hero1.png" alt="所有文章" />
-      </section>
       <div class="container">
-        <div class="content">
+        <section class="hero">
+          <img class="desktop-version-image" src="./src/images/hero1.png" alt="所有文章" />
+          <img
+            class="mobile-version-image"
+            src="./src/images/hero1-mobile.png"
+            alt="所有文章"
+          />
+        </section>
+        <div class="content article">
           <nav>
             <ul class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">首頁</a></li>
@@ -124,7 +139,7 @@
               </div>
             </div>
           </section>
-        </div> 
+        </div>
       </div>
     </main>
     <footer class="footer">
