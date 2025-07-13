@@ -4,75 +4,237 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vire - Article</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./src/style/global.css" />
   </head>
   <body>
-    <header class="header">
-      <a href="./index.html"></a>
-      <div class="collapse navbar-collapse">
+    <header class="header container">
+      <a class="logo" href="./index.html"
+        ><img src="./src/images/logo.svg" alt="Vivre"
+      /></a>
+      <button type="button" class="close-btn"><span>Close Menu</span></button>
+      <div class="collapse">
         <form class="search-form">
-          <button type="button" class="close-btn">Close Menu</button>
-          <input class="search" type="search" placeholder="Search" />
-          <button class="search-btn" type="submit">Search</button>
+          <input id="input-search" type="search" placeholder="搜尋文章" />
+          <label for="input-search">搜尋文章</label>
         </form>
         <nav>
-          <ul>
-            <li><a href="javascript:;">所有文章</a></li>
-            <li><a href="javascript:;">訂閱方案</a></li>
-            <li><a href="javascript:;">關於我們</a></li>
-            <li><button type="button" class="btn">登入 / 註冊</button></li>
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">所有文章</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">訂閱方案</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:;">關於我們</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn">登入 / 註冊</button>
+            </li>
           </ul>
         </nav>
       </div>
-    </header> 
+    </header>
     <main>
-      <section class="hero">
-        <img src="./src/images/hero2.png" alt="關於我們">
+      <section class="hero container">
+        <img
+          class="desktop-version-image"
+          src="./src/images/hero2.png"
+          alt="關於我們"
+        />
+        <img
+          class="mobile-version-image"
+          src="./src/images/hero2-mobile.png"
+          alt="關於我們"
+        />
       </section>
-      <div class="content">
-        <nav>
-          <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">首頁</a></li>
-            <li class="breadcrumb-item active"><a href="#">關於我們</a></li>
-          </ul>
-        </nav>
-        <section class="about">
+
+      <div class="content about">
+        <div class="container">
+          <nav>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">首頁</a></li>
+              <li class="breadcrumb-item active"><a href="#">關於我們</a></li>
+            </ul>
+          </nav>
           <h1>關於我們</h1>
+        </div>
+        <section class="about container">
+          <div class="aboutInner">
+            <div class="flex-block">
+              <div><img src="./src/images/about1.png" alt="Vivre" /></div>
+              <div>
+                <h2>Vivre</h2>
+                <p>
+                  vivre
+                  這個品牌名稱源自法語,意為"生活"、"活著"。它象徵著我們對於高品質生活的熱愛與追求。vivre
+                  旨在成為一個分享美好生活體驗、發掘生活質感的平台。
+                </p>
+                <h3>我們的品牌價值</h3>
+                <ul>
+                  <li><p>熱愛生活,好奇心永存</p></li>
+                  <li><p>品味獨具,講究生活質感</p></li>
+                  <li><p>分享真實生活,啟發生活靈感</p></li>
+                  <li><p>推廣慢生活哲學,注重內在修為</p></li>
+                </ul>
+              </div>
+            </div>
+            <div class="flex-block row-reverse">
+              <div><img src="./src/images/about2.png" alt="風格特色" /></div>
+              <div>
+                <h2>風格特色</h2>
+                <p>
+                  vivre
+                  所展現的風格特色,可以用知性、親和、用心、優雅與獨特這些詞語來概括。我們講求內容的原創性與探索精神,不跟風追隨潮流話題,而是真誠分享獨特的生活視角與體驗。無論是旅行、美食、居家、時尚等生活領域,我們都希望能夠呈現出與眾不同、縝密入微、內外兼具的見解,給讀者帶來嶄新的感受和啟迪。
+                </p>
+                <p>
+                  無論您是對美食、旅行、居家生活還是時尚風尚有獨到的見解和體會,只要切合vivre的價值理念與風格調性,我們都熱烈歡迎您加入這個平台,與我們一起分享和交流生活的點點滴滴。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="history">
           <div class="flex-block">
-            <div><img src="./src/images/about1.png" alt="Vivre"></div>
             <div>
-              <h2>Vivre</h2>
-              <p>vivre 這個品牌名稱源自法語,意為"生活"、"活著"。它象徵著我們對於高品質生活的熱愛與追求。vivre 旨在成為一個分享美好生活體驗、發掘生活質感的平台。</p>
-              <p><strong>我們的品牌價值</strong></p>
-              <ul>
-                <li>熱愛生活,好奇心永存</li>
-                <li>品味獨具,講究生活質感</li>
-                <li>分享真實生活,啟發生活靈感</li>
-                <li>推廣慢生活哲學,注重內在修為</li>
+              <h2>大事記</h2>
+            </div>
+            <div>
+              <ul class="timeline">
+                <li class="timeline-item">
+                  <div class="year"><span>2020</span></div>
+                  <div class="event">
+                    <ul class="event-list">
+                      <li class="event-item">
+                        <div class="month">5<span>月</span></div>
+                        <div class="event-des">
+                          創辦人茱麗葉、亞歷山大和幾個好友在巴黎開設 vivre
+                          生活部落格,紀錄分享他們對美好生活的想法和體驗。
+                        </div>
+                      </li>
+                      <li class="event-item">
+                        <div class="month">10<span>月</span></div>
+                        <div class="event-des">
+                          部落格內容和讀者人數逐漸累積,決定成立 vivre
+                          品牌,開發更多元豐富的內容。
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="timeline-item">
+                  <div class="year"><span>2021</span></div>
+                  <div class="event">
+                    <ul class="event-list">
+                      <li class="event-item">
+                        <div class="month">3<span>月</span></div>
+                        <div class="event-des">
+                          vivre網站正式上線,除了原創文字內容,還加上了視訊、音訊等多媒體形式。
+                        </div>
+                      </li>
+                      <li class="event-item">
+                        <div class="month">7<span>月</span></div>
+                        <div class="event-des">
+                          與法國本土品牌合作,推出 vivre
+                          首個自有產品線,包括家飾、餐飲用品等生活品味商品。
+                        </div>
+                      </li>
+                      <li class="event-item">
+                        <div class="month">12<span>月</span></div>
+                        <div class="event-des">
+                          總瀏覽人次突破 100 萬大關,獲得實體出版社青睞,出版
+                          vivre 生活風格書籍。
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="timeline-item">
+                  <div class="year"><span>2022</span></div>
+                  <div class="event">
+                    <ul class="event-list">
+                      <li class="event-item">
+                        <div class="month">3<span>月</span></div>
+                        <div class="event-des">
+                          推出 vivre
+                          生活風格線上課程,聘請各領域專家開設有深度的付費課程。
+                        </div>
+                      </li>
+                      <li class="event-item">
+                        <div class="month">8<span>月</span></div>
+                        <div class="event-des">
+                          vivre 舉辦首屆 vivre
+                          生活節,線上線下同步展開,現場湧入大批品牌粉絲朋友。
+                        </div>
+                      </li>
+                      <li class="event-item">
+                        <div class="month">10<span>月</span></div>
+                        <div class="event-des">
+                          vivre 完成 A 輪融資,獲得知名風投資金青睞。
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+
+                <li class="timeline-item">
+                  <div class="year"><span>2023</span></div>
+                  <div class="event">
+                    <ul class="event-list">
+                      <li class="event-item">
+                        <div class="month">1<span>月</span></div>
+                        <div class="event-des">
+                          vivre
+                          宣布品牌願景"探索更美好的生活",並推出全新視覺形象。
+                        </div>
+                      </li>
+                      <li class="event-item">
+                        <div class="month">5<span>月</span></div>
+                        <div class="event-des">
+                          正式推出付費訂閱會員服務,提供高階獨家內容和會員優惠。
+                        </div>
+                      </li>
+                      <li class="event-item">
+                        <div class="month">9<span>月</span></div>
+                        <div class="event-des">
+                          首次評選年度" vivre
+                          生活風格大獎",表彰在各領域具有開創性的人物及品牌。
+                        </div>
+                      </li>
+                      <li class="event-item">
+                        <div class="month">11<span>月</span></div>
+                        <div class="event-des">
+                          首次登場的" vivre
+                          生活節沙龍"在全球主要城市同步舉行,線上線下吸引百萬人觀看。
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
-          <div class="flex-block row-reverse">
-            <div><img src="./src/images/about2.png" alt="風格特色"></div>
-            <div>
-              <h2>風格特色</h2>
-              <p>vivre
-              所展現的風格特色,可以用知性、親和、用心、優雅與獨特這些詞語來概括。我們講求內容的原創性與探索精神,不跟風追隨潮流話題,而是真誠分享獨特的生活視角與體驗。無論是旅行、美食、居家、時尚等生活領域,我們都希望能夠呈現出與眾不同、縝密入微、內外兼具的見解,給讀者帶來嶄新的感受和啟迪。</p>
-              <p>無論您是對美食、旅行、居家生活還是時尚風尚有獨到的見解和體會,只要切合vivre的價值理念與風格調性,我們都熱烈歡迎您加入這個平台,與我們一起分享和交流生活的點點滴滴。</p>
-            </div>
-          </div>
-        </section>
-        <section class="history">
-          <h2>大事記</h2>
-          <div class="">
-
-          </div>
         </section>
         <section class="vision">
-          <h2>品牌願景</h2>
-          <p>我們的目標不僅是為讀者提供高水準的內容，更希望能真正啟發和影響讀者的生活方式與價值觀,引領走向更有意義、品質與質感的生活體驗。我們相信,生活的意義不僅僅在於外在物質條件的滿足,更多的是一種心靈層面的追求,一種對美好事物的不懈向往。因此,vivre
-          的定位是成為啟迪現代人內在生活的引路人,給予靈感啟迪,引領讀者去體驗生活的真諦。</p>
-          <p>我們衷心期盼，vivre 能為現代人的生活帶來無限靈感啟發,讓每個人的生活之路不僅優雅、從容,更有內在的意義與價值,豐富而燦爛。讓我們共同努力,將生活過得更有滋有味!期待您一同加入 vivre，攜手同行這段美妙的人生旅程。</p>
+          <div class="visionInner">
+            <h2>品牌願景</h2>
+            <p>
+              我們的目標不僅是為讀者提供高水準的內容，更希望能真正啟發和影響讀者的生活方式與價值觀,引領走向更有意義、品質與質感的生活體驗。我們相信,生活的意義不僅僅在於外在物質條件的滿足,更多的是一種心靈層面的追求,一種對美好事物的不懈向往。因此,vivre
+              的定位是成為啟迪現代人內在生活的引路人,給予靈感啟迪,引領讀者去體驗生活的真諦。
+            </p>
+            <p>
+              我們衷心期盼，vivre
+              能為現代人的生活帶來無限靈感啟發,讓每個人的生活之路不僅優雅、從容,更有內在的意義與價值,豐富而燦爛。讓我們共同努力,將生活過得更有滋有味!期待您一同加入
+              vivre，攜手同行這段美妙的人生旅程。
+            </p>
+          </div>
         </section>
       </div>
     </main>
@@ -81,5 +243,6 @@
     </footer>
   </body>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./src/js/main.js"></script>
 </html>

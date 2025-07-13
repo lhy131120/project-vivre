@@ -19,7 +19,7 @@
       <div class="collapse">
         <form class="search-form">
           <input id="input-search" type="search" placeholder="搜尋文章" />
-          <!-- <button class="search-btn" type="submit">Search</button> -->
+          <label for="input-search">搜尋文章</label>
         </form>
         <nav>
           <ul class="nav">
@@ -40,19 +40,19 @@
       </div>
     </header>
     <main class="">
+      <section class="hero container">
+        <img
+          class="desktop-version-image"
+          src="./src/images/hero1.png"
+          alt="所有文章"
+        />
+        <img
+          class="mobile-version-image"
+          src="./src/images/hero1-mobile.png"
+          alt="所有文章"
+        />
+      </section>
       <div class="container">
-        <section class="hero">
-          <img
-            class="desktop-version-image"
-            src="./src/images/hero1.png"
-            alt="所有文章"
-          />
-          <img
-            class="mobile-version-image"
-            src="./src/images/hero1-mobile.png"
-            alt="所有文章"
-          />
-        </section>
         <div class="content article">
           <nav>
             <ul class="breadcrumb">
@@ -63,7 +63,7 @@
               </li>
             </ul>
           </nav>
-          <section class="blog">
+          <section class="blog collapsed">
             <h1>私人島嶼的露營奇遇記</h1>
             <time datetime="2024-05-01">2024 / 5 / 1</time>
             <p>
@@ -147,6 +147,10 @@
               </ul>
             </div>
           </section>
+          <div class="showHiddenContent">
+            <p>本篇為會員專屬文章，馬上訂閱瀏覽所有內容！</p>
+            <button type="button" class="btn btnIcon showArticle">我要訂閱</button>
+          </div>
           <section class="extraInfo">
             <h2>延伸閱讀</h2>
             <div class="cardWrap swiper">

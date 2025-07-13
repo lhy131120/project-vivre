@@ -123,6 +123,11 @@ a {
   transition: all 0.3s ease;
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+  display: none; /* 完全隱藏 */
+  -webkit-appearance: none; /* 移除預設樣式，確保相容 */
+}
+
 .container {
   max-width: 1320px;
   padding: 0 12px;
@@ -173,7 +178,8 @@ a {
 .header .collapse {
   flex: 1;
   width: 100%;
-  display: flex;
+  /* display: flex; */
+  display: none;
   align-items: center;
   justify-content: space-between;
   margin-left: 36px;
@@ -181,15 +187,15 @@ a {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 80%;
+  width: 100%;
   max-width: 100%;
   background-color: var(--white);
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
   padding: 24px;
-  transform: translateX(100%);
+  transform: translateY(-100%);
   opacity: 0;
-  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
-    opacity 0.5s ease-in-out;
+  transition: display .3s ease-in, transform 1s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 1s ease-in-out;
   z-index: 1000;
 }
 
@@ -262,11 +268,26 @@ a {
   max-width: 276px;
 }
 
+.header .search-form:before {
+  content: "";
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 50%;
+  right: .75rem;
+  transform: translateY(-50%);
+  background-size: 18px 18px;
+  background-position: center center;
+  background-image: url("data:image/svg+xml,%0A%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_2413_1882)'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15.6612 15.6633C15.8005 15.5239 15.966 15.4132 16.148 15.3377C16.3301 15.2622 16.5253 15.2234 16.7225 15.2234C16.9196 15.2234 17.1148 15.2622 17.2969 15.3377C17.479 15.4132 17.6444 15.5239 17.7837 15.6633L23.5587 21.4383C23.8402 21.7196 23.9984 22.1011 23.9985 22.499C23.9987 22.8969 23.8407 23.2786 23.5595 23.5601C23.2782 23.8415 22.8966 23.9997 22.4987 23.9999C22.1008 24 21.7192 23.8421 21.4377 23.5608L15.6627 17.7858C15.5232 17.6465 15.4126 17.4811 15.3371 17.299C15.2616 17.1169 15.2228 16.9217 15.2228 16.7246C15.2228 16.5274 15.2616 16.3323 15.3371 16.1502C15.4126 15.9681 15.5232 15.8026 15.6627 15.6633H15.6612Z' fill='%23569573'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.75 18C10.8334 18 11.9062 17.7866 12.9071 17.372C13.9081 16.9574 14.8175 16.3497 15.5836 15.5836C16.3497 14.8175 16.9574 13.9081 17.372 12.9071C17.7866 11.9062 18 10.8334 18 9.75C18 8.66659 17.7866 7.5938 17.372 6.59286C16.9574 5.59193 16.3497 4.68245 15.5836 3.91637C14.8175 3.15029 13.9081 2.5426 12.9071 2.12799C11.9062 1.71339 10.8334 1.5 9.75 1.5C7.56196 1.5 5.46354 2.36919 3.91637 3.91637C2.36919 5.46354 1.5 7.56196 1.5 9.75C1.5 11.938 2.36919 14.0365 3.91637 15.5836C5.46354 17.1308 7.56196 18 9.75 18ZM19.5 9.75C19.5 12.3359 18.4728 14.8158 16.6443 16.6443C14.8158 18.4728 12.3359 19.5 9.75 19.5C7.16414 19.5 4.68419 18.4728 2.85571 16.6443C1.02723 14.8158 0 12.3359 0 9.75C0 7.16414 1.02723 4.68419 2.85571 2.85571C4.68419 1.02723 7.16414 0 9.75 0C12.3359 0 14.8158 1.02723 16.6443 2.85571C18.4728 4.68419 19.5 7.16414 19.5 9.75Z' fill='%23569573'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_2413_1882'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
 .header .search-form input {
   width: 100%;
-  padding: 12px 20px;
+  padding: 12px 20px 12px 100px;
   border: 1px solid var(--neutral-200);
   border-radius: var(--border-radius-xl);
+  caret-color: var(--neutral-500)
 }
 
 .header .search-form input:focus {
@@ -275,13 +296,23 @@ a {
 }
 
 .header .search-form input::placeholder {
+  color: transparent;
+}
+
+.header .search-form input + label {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-block;;
+  width: max-content;
   font-weight: var(--font-semiblod);
   color: var(--neutral-300);
   line-height: var(--line-height-l);
   letter-spacing: var(--letter-spacing);
 }
 
-.header .search-form input:focus::placeholder {
+.header .search-form input:focus + label{
   color: var(--dark);
 }
 
@@ -323,7 +354,7 @@ a {
 }
 
 .header .nav .nav-link {
-  display: block;
+  display: inline-block;
   padding: 0.5rem 1.25rem;
   line-height: var(--line-height-s);
   font-weight: var(--font-bold);
@@ -332,10 +363,18 @@ a {
   transition: all 0.3s ease;
 }
 
+.header .nav .nav-link:hover {
+  color: var(--accent-200);
+}
+
 /* content */
 
 .content.article {
   padding: 5rem 0 6.25rem;
+}
+
+.content.about {
+  padding-top: 5rem;
 }
 
 .breadcrumb {
@@ -395,9 +434,11 @@ a {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
+
   .h2 {
     font-size: 1.5rem;
   }
+
   time {
     font-weight: var(--font-semiblod);
     color: var(--neutral-300);
@@ -405,22 +446,30 @@ a {
     letter-spacing: var(--letter-spacing-s);
     margin-bottom: 1.75rem;
   }
+
   .header {
     padding: 8px 4px 8px 12px;
   }
+
   .header .logo {
     width: 68px;
   }
+
   .header .collapse {
     flex-direction: column;
     align-items: flex-start;
-    max-width: 320px;
+    justify-content: flex-start;
+    max-width: 100%;
     margin: 0;
+    padding: 4.75rem 0.75rem;
   }
+
   .header .collapse.show {
+    display: block;
     transform: translateX(0);
     opacity: 1;
   }
+
   .header .collapse.show .search-form {
     margin-bottom: 24px;
     max-width: 100%;
@@ -429,41 +478,62 @@ a {
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     transition-delay: 0.05s;
   }
+
+  .header .collapse nav {
+    width: 100%;
+  }
+
   .header .collapse.show .nav {
     flex-direction: column;
     align-items: flex-start;
     padding: 0;
-    gap: 12px;
+    gap: 1.5rem;
   }
+
   .header .collapse.show .nav .nav-item {
     width: 100%;
   }
+
   .header .collapse.show .nav .nav-link {
     padding: 12px 0;
     width: 100%;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
+
   .header .collapse.show .nav .nav-item .btn {
     width: 100%;
     justify-content: center;
   }
+
   .header .close-btn {
     display: block;
   }
+
   .content.article {
     padding: 2.5rem 0 3.75rem;
   }
+
   .breadcrumb li a {
     font-size: 0.875rem;
     line-height: 2;
   }
+
   .footer {
     font-size: 0.875rem;
+  }
+
+  .mobile-version-image {
+    display: block;
+  }
+
+  .desktop-version-image {
+    display: none;
   }
 }
 
 @media (min-width: 992px) {
   .header .collapse {
+    display: flex;
     transform: none;
     opacity: 1;
     position: static;

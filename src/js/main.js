@@ -28,6 +28,29 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  const showArticleBtn = document.querySelector(".showArticle");
+  const showHiddenContent = document.querySelector(".showHiddenContent");
+  const blogSection = document.querySelector(".blog");
+
+  if(!showArticleBtn, !showHiddenContent, !blogSection) return;
+
+  showArticleBtn.addEventListener("click",() => {
+
+    if(blogSection.classList.contains("collapsed")) {
+      blogSection.style.maxHeight = blogSection.scrollHeight + "px";
+      blogSection.classList.remove("collapsed");
+      blogSection.classList.add("expanded");
+
+      if(showHiddenContent) {
+        showHiddenContent.classList.add("hidden");
+      }
+
+      blogSection.addEventListener("transitionend", () => {
+        blogSection.style.maxHeight = "none";
+      }, { once: true });
+    }
+  })
+ 
   // swiper
 
   const swiper = new Swiper(".cardWrap", {
